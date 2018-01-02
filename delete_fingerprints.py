@@ -30,14 +30,10 @@ def deleteNetworks():
 
     for network in remove_shared:
         r = conn.get_object("sharednetwork",
-                                {"name": network})
-
-        print(r)
+                            {"name": network})
 
     for network in remove_networks:
         delete = conn.delete_object(network)
-
-    print(remove_shared)
 
 requests.packages.urllib3.disable_warnings() # suprress irrelevant messages to enduser
 deleteNetworks()
